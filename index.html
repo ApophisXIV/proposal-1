@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>😄</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #413f42;
+				text-align: center;
+                height: 100vh;
+			}
+			button {
+				/* transition: all 0.1s ease-in-out; */
+				opacity: 1;
+			}
+		</style>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<div class="flex h-screen">
+			<div class="m-auto p-2" id="story-container"></div>
+		</div>
+
+		<script>
+			//Utils
+			const update_ui = (html) => {
+				const story_container = document.getElementById("story-container");
+				story_container.innerHTML = html;
+			};
+			const random_position = (e) => {
+				const object = e.target;
+				const max_x = window.innerWidth - object.offsetWidth;
+				const max_y = window.innerHeight - object.offsetHeight;
+				const x = Math.floor(Math.random() * max_x);
+				const y = Math.floor(Math.random() * max_y);
+				object.style.position = "absolute";
+				object.style.left = x + "px";
+				object.style.top = y + "px";
+				const msgs = ["Oleeee!!", "Probá de nuevo", "El otro botón es mejor"];
+				object.innerHTML = msgs[Math.floor(Math.random() * msgs.length)];
+			};
+		</script>
+
+		<script>
+			// Third screen
+			const third_screen = () => {
+				const third_places_html = `
+                    <h1 class="font-medium leading-tight text-3xl text-zinc-200 mt-10">Lugarcitos piolis</h1>
+                    <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
+                        Estos me parecen unos lugares copados, a pesar de que <br>
+                        con varios parece que soy miembro vitalicio del PAMI
+                        (tengo más pero seria larga la historia)
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6 justify-items-center">
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="https://g.page/imperio-1946?share">
+                                <img class="rounded-t-lg w-full h-60" src="https://parabuenosaires.com/wp-content/uploads/2017/02/imperio.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="https://g.page/imperio-1946?share">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">El Imperio</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Sábado post-parcial y para cerar unos churros que están por ahí</p>
+                                <a href="https://g.page/imperio-1946?share" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="https://goo.gl/maps/ZNtwFQnzpi6AeiDs8">
+                                <img class="rounded-t-lg w-full h-60" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vzIwoJt7PTonMRCIujzuUBhiOZ1vif7ev7hZ5cIUx6Q5eIMFWcCMOy9ortnMM1Ckk-4&usqp=CAU" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="https://goo.gl/maps/ZNtwFQnzpi6AeiDs8">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Las Violetas</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Un café clásico de Buenos Aires, muuuy bueeno</p>
+                                <a href="https://goo.gl/maps/ZNtwFQnzpi6AeiDs8" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="https://goo.gl/maps/6THWQu7QGLPBTHog8">
+                                <img class="rounded-t-lg w-full h-60" src="https://turismo.buenosaires.gob.ar/sites/turismo/files/cafe-tortoni-interior1500x610.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="https://goo.gl/maps/6THWQu7QGLPBTHog8">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Café Tortoni</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Otro café clásico de Buenos Aires. (Está cerca de la facu)</p>
+                                <a href="https://goo.gl/maps/6THWQu7QGLPBTHog8" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="https://g.page/EscapeGamesCaballito?share">
+                                <img class="rounded-t-lg w-full h-60" src="https://lh5.googleusercontent.com/p/AF1QipNz82nvhGycbd8hDnH__n6Y9JWzghVk7WOUqEMs=w426-h240-k-no" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="https://g.page/EscapeGamesCaballito?share">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Escape Games Caballito</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Nunca fuí pero gente que conozco me lo recomendó</p>
+                                <a href="https://g.page/EscapeGamesCaballito?share" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg w-full h-60" src="https://www.buenosaires.gob.ar/sites/gcaba/files/el_parque_-_foto_3.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Algún parquecito</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Nunca está mal salir a caminar. Infaltable</p>
+                                <a href="#" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg w-full h-60" src="https://pbs.twimg.com/media/Enq5ecuWEAAj5bF.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Algún otro lugar</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">Si tenés algún lugar en mente, me sumo!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                `;
+				update_ui(third_places_html);
+			};
+		</script>
+
+		<script>
+			//Second screen
+			const second_invitation_html = `
+                <h1 class="font-medium leading-tight text-3xl text-zinc-200">🐢</h1>
+                <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
+                    Me caiste bien, por eso... <br>
+                    ¿Qué decis si te propongo una serie de salidas a distintos lugares copados?. Chill
+                </h2>
+                <button
+                id="where_to_go_btn"
+                    class="mb-5 mr-5 bg-teal-500 hover:bg-teal-400 text-white font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-teal-500 rounded-full"
+                >
+                    Mmm... me interesa. Donde? 🤔
+                </button>
+				<button
+					id="no_btn"
+					class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded-full"
+				>
+					Mmm... naa 😕
+				</button>
+            `;
+
+			const second_notes_html = `
+                <h1 class="pt-6 font-medium leading-tight text-3xl text-zinc-200"> Encontraste el baúl con mis notas 📚</h1>
+                <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
+                    Si queres leerlas vas a tener que resolver una serie de acertijos. <br>
+                    Cuando tengas una respuesta mandame un mensaje y si es correcta la nota se habilita.
+                </h2>
+                <div class="flex justify-center flex-wrap">
+
+                    <div class="p-6 m-2  bg-zinc-800 rounded-lg border border-zinc-700 shadow-xl">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Nota 1</h5>
+                        <p class="mb-3 font-normal text-gray-400 max-w-prose	">
+                            Estás paseando por un camino y de pronto entras en una bifurcación. Un camino lleva a
+                            una muerte segura; el otro conduce a la felicidad eterna. No sabes cuál es cuál.
+                            En el medio del comienzo de la bifurcación, te encontras con dos hermanos que
+                            saben qué camino es el bueno. Un hermano siempre dice la verdad y el otro siempre
+                            miente. Sólo podés hacerles una pregunta. ¿Cómo determinas qué camino
+                            tomar, o sea, el de la felicidad eterna?
+                        </p>
+                    </div>
+
+                    <div class="p-6 m-2  bg-zinc-800 rounded-lg border border-zinc-700 shadow-xl">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Nota 2</h5>
+                        <p class="mb-3 font-normal text-gray-400">
+                            (Una vez resuelvas el primer acertijo se va a desbloquear)
+                        </p>
+                    </div>
+
+                    <div class="p-6 m-2  bg-zinc-800 rounded-lg border border-zinc-700 shadow-xl">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Nota 3</h5>
+                        <p class="mb-3 font-normal text-gray-400">
+                            (Una vez resuelvas el primer y segundo acertijo se va a desbloquear)
+                        </p>
+                    </div>
+                </div>
+            `;
+
+			const second_screen_invitation = () => {
+				update_ui(second_invitation_html);
+
+				const no_btn = document.querySelector("#no_btn");
+				no_btn.addEventListener("click", random_position);
+
+				const where_to_go_btn = document.querySelector("#where_to_go_btn");
+				where_to_go_btn.addEventListener("click", third_screen);
+			};
+
+			const second_screen_notes = () => {
+				update_ui(second_notes_html);
+			};
+		</script>
+
+		<script>
+			// First screen
+			const first_html = `
+				<img src="bbbbbbuenas-gaspi.gif" alt="buenas buenas" class="rounded-full w-72 h-72 m-auto mb-5" />
+				<h2 class="text-xl mb-5 text-zinc-400 leading-tight italic">
+					Posiblemente este es el mensaje más divertido u original / <span class="line-through">raro</span> que<br />
+					te mandaron alguna vez
+				</h2>
+				<button
+					id="tell_me_more"
+					class="mb-5 mr-5 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full"
+				>
+					Tengo curiosidad. De que se trata? 🤔
+				</button>
+				<button
+					id="my_notes"
+					class="mb-5 mr-5 bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded-full"
+				>
+					📑
+				</button>
+                `;
+			update_ui(first_html);
+
+			const tell_me_more_btn = document.querySelector("#tell_me_more");
+			tell_me_more_btn.addEventListener("click", second_screen_invitation);
+
+			const my_notes_btn = document.querySelector("#my_notes");
+			my_notes_btn.addEventListener("click", second_screen_notes);
+		</script>
+	</body>
+</html>
