@@ -1,71 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>😄</title>
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				background: #413f42;
-				text-align: center;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>😄</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #413f42;
+                text-align: center;
                 height: 100vh;
-			}
-			button {
-				/* transition: all 0.1s ease-in-out; */
-				opacity: 1;
-			}
-		</style>
-		<script src="https://cdn.tailwindcss.com"></script>
-	</head>
-	<body>
-		<div class="flex h-screen">
-			<div class="m-auto p-2" id="story-container"></div>
-		</div>
+            }
+            button {
+                /* transition: all 0.1s ease-in-out; */
+                opacity: 1;
+            }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="flex h-screen">
+            <div class="m-auto p-2" id="story-container"></div>
+        </div>
 
-		<script>
-			//Utils
-			const update_ui = (html) => {
-				const story_container = document.getElementById("story-container");
-				story_container.innerHTML = html;
-			};
-			const random_position = (e) => {
-				const object = e.target;
-				const max_x = window.innerWidth - object.offsetWidth;
-				const max_y = window.innerHeight - object.offsetHeight;
-				const x = Math.floor(Math.random() * max_x);
-				const y = Math.floor(Math.random() * max_y);
-				object.style.position = "absolute";
-				object.style.left = x + "px";
-				object.style.top = y + "px";
-				const msgs = ["Oleeee!!", "Probá de nuevo", "El otro botón es mejor"];
-				object.innerHTML = msgs[Math.floor(Math.random() * msgs.length)];
-			};
-		</script>
+        <script>
+            //Utils
+            const update_ui = (html) => {
+                const story_container = document.getElementById("story-container");
+                story_container.innerHTML = html;
+            };
+            const random_position = (e) => {
+                const object = e.target;
+                const max_x = window.innerWidth - object.offsetWidth;
+                const max_y = window.innerHeight - object.offsetHeight;
+                const x = Math.floor(Math.random() * max_x);
+                const y = Math.floor(Math.random() * max_y);
+                object.style.position = "absolute";
+                object.style.left = x + "px";
+                object.style.top = y + "px";
+                const msgs = ["Oleeee!!", "Probá de nuevo", "El otro botón es mejor"];
+                object.innerHTML = msgs[Math.floor(Math.random() * msgs.length)];
+            };
+        </script>
 
-		<script>
-// 			                       <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
-//                             <a href="https://g.page/EscapeGamesCaballito?share">
-//                                 <img class="rounded-t-lg w-full h-60" src="https://lh5.googleusercontent.com/p/AF1QipNz82nvhGycbd8hDnH__n6Y9JWzghVk7WOUqEMs=w426-h240-k-no" alt="" />
-//                             </a>
-//                             <div class="p-5">
-//                                 <a href="https://g.page/EscapeGamesCaballito?share">
-//                                     <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">Escape Games Caballito</h5>
-//                                 </a>
-//                                 <p class="mb-3 font-normal text-gray-400">Nunca fuí pero gente que conozco me lo recomendó</p>
-//                                 <a href="https://g.page/EscapeGamesCaballito?share" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
-//                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
-//                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-//                                     </svg>
-//                                 </a>
-//                             </div>
-//                         </div>
-			
-			// Third screen
-			const third_screen = () => {
-				const third_places_html = `
+        <script>
+            // Third screen
+            const third_screen = () => {
+                const third_places_html = `
                     <h1 class="font-medium leading-tight text-3xl text-zinc-200 mt-10">Lugarcitos piolis</h1>
                     <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
                         Estos me parecen unos lugares copados, a pesar de que <br>
@@ -81,8 +64,25 @@
                                 <a href="https://g.page/imperio-1946?share">
                                     <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">El Imperio</h5>
                                 </a>
-                                <p class="mb-3 font-normal text-gray-400">Sábado post-parcial y para cerrar unos churros que están por ahí</p>
+                                <p class="mb-3 font-normal text-gray-400">Imaginate, sábado post-parcial y para cerar unos churros que están por ahí</p>
                                 <a href="https://g.page/imperio-1946?share" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs rounded-lg border shadow-md bg-gray-800 border-gray-700">
+                            <a href="https://www.google.com.ar/maps/@-34.6163055,-58.3569061,3a,75y,60.65h,92.12t/data=!3m6!1e1!3m4!1sEod4oEOEJjuvl1kycanxtw!2e0!7i16384!8i8192?hl=en&authuser=0">
+                                <img class="rounded-t-lg w-full h-60" src="https://resizer.glanacion.com/resizer/RU3Y4ySUdi-ooGFHH0EPaZYIth8=/310x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/QPZMCPGT3FDILGLTHOW3LPXQIU.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="https://www.google.com.ar/maps/@-34.6163055,-58.3569061,3a,75y,60.65h,92.12t/data=!3m6!1e1!3m4!1sEod4oEOEJjuvl1kycanxtw!2e0!7i16384!8i8192?hl=en&authuser=0">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight  text-white">La costanera + Reserva ecológica</h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-400">A 3 cuadras de la facu, a la tardecita almorzar por ahí comiendo en la reserva ecológica viendo el río, copadisimo</p>
+                                <a href="https://www.google.com.ar/maps/@-34.6163055,-58.3569061,3a,75y,60.65h,92.12t/data=!3m6!1e1!3m4!1sEod4oEOEJjuvl1kycanxtw!2e0!7i16384!8i8192?hl=en&authuser=0" class="inline-flex items-center py-4 px-5 text-sm font-medium text-center rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" viewBox="0 0 20 20" fill="white">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
@@ -155,17 +155,17 @@
 
                     </div>
                 `;
-				update_ui(third_places_html);
-			};
-		</script>
+                update_ui(third_places_html);
+            };
+        </script>
 
-		<script>
-			//Second screen
-			const second_invitation_html = `
+        <script>
+            //Second screen
+            const second_invitation_html = `
                 <h1 class="font-medium leading-tight text-3xl text-zinc-200">🐢</h1>
                 <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
                     Me caiste bien, por eso... <br>
-                    ¿Qué decis si te propongo una serie de salidas a distintos lugares copados? (Obvio con tiempo y cuando se pueda). Chill
+                    ¿Qué decis si te propongo una serie de salidas a distintos lugares copados?. Chill
                 </h2>
                 <button
                 id="where_to_go_btn"
@@ -181,7 +181,7 @@
 				</button>
             `;
 
-			const second_notes_html = `
+            const second_notes_html = `
                 <h1 class="pt-6 font-medium leading-tight text-3xl text-zinc-200"> Encontraste el baúl con mis notas 📚</h1>
                 <h2 class="text-xl my-4 text-zinc-400 leading-tight italic">
                     Si queres leerlas vas a tener que resolver una serie de acertijos. <br>
@@ -217,24 +217,24 @@
                 </div>
             `;
 
-			const second_screen_invitation = () => {
-				update_ui(second_invitation_html);
+            const second_screen_invitation = () => {
+                update_ui(second_invitation_html);
 
-				const no_btn = document.querySelector("#no_btn");
-				no_btn.addEventListener("click", random_position);
+                const no_btn = document.querySelector("#no_btn");
+                no_btn.addEventListener("click", random_position);
 
-				const where_to_go_btn = document.querySelector("#where_to_go_btn");
-				where_to_go_btn.addEventListener("click", third_screen);
-			};
+                const where_to_go_btn = document.querySelector("#where_to_go_btn");
+                where_to_go_btn.addEventListener("click", third_screen);
+            };
 
-			const second_screen_notes = () => {
-				update_ui(second_notes_html);
-			};
-		</script>
+            const second_screen_notes = () => {
+                update_ui(second_notes_html);
+            };
+        </script>
 
-		<script>
-			// First screen
-			const first_html = `
+        <script>
+            // First screen
+            const first_html = `
 				<img src="bbbbbbuenas-gaspi.gif" alt="buenas buenas" class="rounded-full w-72 h-72 m-auto mb-5" />
 				<h2 class="text-xl mb-5 text-zinc-400 leading-tight italic">
 					Posiblemente este es el mensaje más divertido u original / <span class="line-through">raro</span> que<br />
@@ -246,21 +246,20 @@
 				>
 					Tengo curiosidad. De que se trata? 🤔
 				</button>
-				`;
-// 				<button
-// 					id="my_notes"
-// 					class="mb-5 mr-5 bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded-full"
-// 				>
-// 					📑
-// 				</button>
-//                 `;
-			update_ui(first_html);
+                `;
+				// <button
+				// 	id="my_notes"
+				// 	class="mb-5 mr-5 bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded-full"
+				// >
+				// 	📑
+				// </button>
+            update_ui(first_html);
 
-			const tell_me_more_btn = document.querySelector("#tell_me_more");
-			tell_me_more_btn.addEventListener("click", second_screen_invitation);
+            const tell_me_more_btn = document.querySelector("#tell_me_more");
+            tell_me_more_btn.addEventListener("click", second_screen_invitation);
 
-			const my_notes_btn = document.querySelector("#my_notes");
-			my_notes_btn.addEventListener("click", second_screen_notes);
-		</script>
-	</body>
+            const my_notes_btn = document.querySelector("#my_notes");
+            my_notes_btn.addEventListener("click", second_screen_notes);
+        </script>
+    </body>
 </html>
